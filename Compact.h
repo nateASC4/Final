@@ -36,7 +36,7 @@ public:
 
 };
 
-class IntQueue : public Compact{
+class IntQueue{
 private:
 public:
 
@@ -48,7 +48,7 @@ public:
 
 };
 
-class IntStack : public Compact{
+class IntStack{
 private:
 public:
   IntStack();
