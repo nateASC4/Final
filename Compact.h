@@ -1,93 +1,70 @@
-#include <vector>
-#include <iostream>
 #ifndef COMPACT_H_
 #define COMPACT_H_
-
+#include <vector>
+#include <iostream>
 using std::cout;
+class LetterNode{
+ private:
 
-class LetterNode {
-  
-private:
-  int val;
-  LetterNode * nextRight;
-  LetterNode * nextLeft;
+  char val;
+  LetterNode* nextLeft;
+  LetterNode* nextRight;
+  bool isTerminal;
 
-public:
+ public:
 
-  LetterNode(char value){
+  LetterNode(char value) {
     this->val = value;
-    nextRight = nullptr;
     nextLeft = nullptr;
+    nextRight = nullptr;
+    isTerminal = true;
   }
-
-  char getVal() {
+  char getVal(){
     return val;
   }
-
-  void setVal(char value) {
+  void setVal(char value){
     this->val = value;
   }
-
-  LetterNode* getNextRight() {
+  LetterNode* getNextRight(){
     return nextRight;
   }
   LetterNode* getNextLeft(){
     return nextLeft;
   }
-  void setNextRight(LetterNode * next) {
-    this->nextRight=next;
+  void setNextRight(LetterNode* nextRt){
+    this->nextRight = nextRt;
+    isTerminal = false;
   }
-  void setNextLeft(LetterNode* next){
-    this->nextLeft = next;
+  void setNextLeft(LetterNode* nextLf){
+    this->nextLeft = nextLf;
+    isTerminal = false;
   }
-  bool hasNextRight() {
+  bool hasNextRight(){
     return nextRight != nullptr;
   }
   bool hasNextLeft(){
     return nextLeft != nullptr;
   }
-
 };
 class Compact{
  private:
   LetterNode* head;
   std::vector<char> arr;
   int size;
+
  public:
-  Compact(char start){
+
+  Compact(char value) {
+    head->setVal(value);
     head->setNextRight(nullptr);
     head->setNextLeft(nullptr);
     size++;
-    head->setVal(start);
-    arr.push_back(start);
+    arr.push_back(value);
   }
   void add(char value);
-  void remove(char value);
-  bool check(std::string word);
-  void add(std::string word);
-  void printElements();
+  void remove(int index);
+  bool checkWord(std::string word);
+  void printArr();
 };
 
-class IntQueue{
-private:
-public:
-
-  IntQueue();
-  int peek();
-  int pop();
-  void push(int number);
-
-
-};
-
-class IntStack{
-private:
-public:
-  IntStack();
-  int peek();
-  void push(int val);
-  int pop();
-
-
-};
 #endif //COMPACT_H_
