@@ -2,7 +2,7 @@
 using std::cout;
 
 class IntNode {
-  
+
 private:
   int val;
   IntNode * next;
@@ -33,28 +33,5 @@ public:
   bool hasNext() {
     return next != nullptr;
   }
-
-};
-
-class IntQueue{
-private:
-public:
-
-  IntQueue();
-  int peek();
-  int pop();
-  void push(int number);
-
-
-};
-
-class IntStack{
-private:
-public:
-  IntStack();
-  int peek();
-  void push(int val);
-  int pop();
-
 
 };
