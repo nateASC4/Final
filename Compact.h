@@ -1,55 +1,68 @@
+#include <vector>
 #include <iostream>
+#ifndef COMPACT_H_
+#define COMPACT_H_
+
 using std::cout;
 
-class IntNode {
+class LetterNode {
   
 private:
   int val;
-  IntNode * next;
+  LetterNode * nextRight;
+  LetterNode * nextLeft;
 
 public:
 
-  IntNode(int value){
+  LetterNode(char value){
     this->val = value;
-    next = nullptr;
+    nextRight = nullptr;
+    nextLeft = nullptr;
   }
 
-  int getVal() {
+  char getVal() {
     return val;
   }
 
-  void setVal(int value) {
+  void setVal(char value) {
     this->val = value;
   }
 
-  IntNode* getNext() {
-    return next;
+  LetterNode* getNextRight() {
+    return nextRight;
   }
-
-  void setNext(IntNode * next) {
-    this->next = next;
+  LetterNode* getNextLeft(){
+    return nextLeft;
   }
-
-  bool hasNext() {
-    return next != nullptr;
+  void setNextRight(LetterNode * next) {
+    this->nextRight=next;
+  }
+  void setNextLeft(LetterNode* next){
+    this->nextLeft = next;
+  }
+  bool hasNextRight() {
+    return nextRight != nullptr;
+  }
+  bool hasNextLeft(){
+    return nextLeft != nullptr;
   }
 
 };
-Class Compact{
+class Compact{
  private:
   LetterNode* head;
-  std::vector<Character> arr;
+  std::vector<char> arr;
   int size;
  public:
-  Compact(Character start){
+  Compact(char start){
     head->setNextRight(nullptr);
     head->setNextLeft(nullptr);
     size++;
-    head.setVal(start);
-    arr.push(start);
+    head->setVal(start);
+    arr.push_back(start);
   }
-  void add(Character value);
-  void remove(Character value);
+  void add(char value);
+  void remove(char value);
   bool check(std::string word);
   void add(std::string word);
   void printElements();
@@ -77,3 +90,4 @@ public:
 
 
 };
+#endif //COMPACT_H_
