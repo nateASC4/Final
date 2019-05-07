@@ -35,6 +35,25 @@ public:
   }
 
 };
+Class Compact{
+ private:
+  LetterNode* head;
+  std::vector<Character> arr;
+  int size;
+ public:
+  Compact(Character start){
+    head->setNextRight(nullptr);
+    head->setNextLeft(nullptr);
+    size++;
+    head.setVal(start);
+    arr.push(start);
+  }
+  void add(Character value);
+  void remove(Character value);
+  bool check(std::string word);
+  void add(std::string word);
+  void printElements();
+};
 
 class IntQueue{
 private:
