@@ -1,3 +1,4 @@
+//change this file into a cpp file 
 import java.util.Map;
 import java.util.Set;
 import java.util.Collection;
@@ -6,11 +7,11 @@ import java.util.ArrayList;
 public final class MyMap<K,V> implements Map<K,V> {
     public Set<Entry<K,V>> entries = new LinkedHashSet<Entry<K,V>>();
     int size;
-    
+
     public int size() {
 	return this.size;
     }
-    
+
     public Set<Entry<K, V>> entrySet() {
 	return entries;
     }
@@ -63,6 +64,6 @@ public final class MyMap<K,V> implements Map<K,V> {
     public boolean isEmpty() {
 	return false;
     }
-    
-	
+
+
 }
