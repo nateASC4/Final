@@ -35,3 +35,4 @@ using namespace std;
   value
   right
   left
+void Compact::();
