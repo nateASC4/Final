@@ -9,7 +9,7 @@ using namespace std;
   }
 
   void Compact::clear(){
-    head = null; 
+    head = null;
   }
   void Compact::remove(){
 
@@ -35,4 +35,4 @@ using namespace std;
   value
   right
   left
-void Compact::();
+void Compact:Compact();
