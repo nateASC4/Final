@@ -4,10 +4,7 @@
 #include "compact.h"
 using namespace std;
 
-  void Compact:Compact(){
-    LetterNode* head = null;
-    size = 0;
-  }
+//We do not need a constructor
   int Compact::size(){
     return size;
   }
