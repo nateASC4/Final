@@ -9,7 +9,7 @@ using namespace std;
   }
 
   void Compact::clear(){
-
+    head = null; 
   }
   void Compact::remove(){
 
