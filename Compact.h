@@ -1,55 +1,42 @@
 #ifndef COMPACT_H_
 #define COMPACT_H_
-#include <vector>
+#include <map>
 #include <iostream>
 using std::cout;
 class LetterNode{
  private:
 
-  char val;
-  LetterNode* nextLeft;
-  LetterNode* nextRight;
+  std::string val;
   bool isTerminal;
+  map <std::string, LetterNode*> hashMap;
+  int nodeCount;
 
  public:
 
-  LetterNode(char value) {
+  LetterNode(std::string value) {
     this->val = value;
-    nextLeft = nullptr;
-    nextRight = nullptr;
     isTerminal = true;
+    nodeCount++;
   }
   char getVal(){
     return val;
   }
-  void setVal(char value){
+  void setVal(std::string value){
     this->val = value;
   }
-  LetterNode* getNextRight(){
-    return nextRight;
+  void addNode(std::string nodeName, std::string value){
+    LetterNode* nodeName = new LetterNode(value);
+    hashMap.insert(nodeName);
+    isTerminal= false;
   }
-  LetterNode* getNextLeft(){
-    return nextLeft;
-  }
-  void setNextRight(LetterNode* nextRt){
-    this->nextRight = nextRt;
-    isTerminal = false;
-  }
-  void setNextLeft(LetterNode* nextLf){
-    this->nextLeft = nextLf;
-    isTerminal = false;
-  }
-  bool hasNextRight(){
-    return nextRight != nullptr;
-  }
-  bool hasNextLeft(){
-    return nextLeft != nullptr;
+  void checkNode(std::string value){
+
   }
 };
-
 class Compact{
  private:
   LetterNode* head;
+  std::vector<char> arr;
   int size;
 
  public:
@@ -65,6 +52,7 @@ class Compact{
   void remove(int index);
   bool checkWord(std::string word);
   void printArr();
+  int getSize();
   int size();
   void clear();
   void remove();
@@ -75,43 +63,4 @@ class Compact{
 };
 
 #endif //COMPACT_H_
-=======
-#include <iostream>
-using std::cout;
-
-class IntNode {
-
-private:
-  int val;
-  IntNode * next;
-
-public:
-
-  IntNode(int value){
-    this->val = value;
-    next = nullptr;
-  }
-
-  int getVal() {
-    return val;
-  }
-
-  void setVal(int value) {
-    this->val = value;
-  }
-
-  IntNode* getNext() {
-    return next;
-  }
-
-  void setNext(IntNode * next) {
-    this->next = next;
-  }
-
-  bool hasNext() {
-    return next != nullptr;
-  }
-
-};
-
->>>>>>> c384c7eacc6073cb2061fce9893b3aff2477d151
+>>>>>>> f49c411a8ac2f65db0eac1d4efce0ade65f3507c
