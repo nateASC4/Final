@@ -46,10 +46,10 @@ class LetterNode{
     return nextLeft != nullptr;
   }
 };
+
 class Compact{
  private:
   LetterNode* head;
-  std::vector<char> arr;
   int size;
 
  public:
@@ -65,6 +65,13 @@ class Compact{
   void remove(int index);
   bool checkWord(std::string word);
   void printArr();
+  int size();
+  void clear();
+  void remove();
+  void put();
+  int get();
+  boolean containsKey();
+  boolean isEmpty();
 };
 
 #endif //COMPACT_H_

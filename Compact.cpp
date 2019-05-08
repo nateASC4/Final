@@ -4,19 +4,24 @@
 #include "compact.h"
 using namespace std;
 
-  int Compact:: size(){
-
+  void Compact:Compact(){
+    LetterNode* head = null;
+    size = 0;
+  }
+  int Compact::size(){
+    return size;
   }
 
   void Compact::clear(){
     head = null;
   }
+
   void Compact::remove(){
 
   }
 
   void Compact::put(){
-
+    LetterNode newNode = new LetterNode();
   }
 
   int Compact::get(){
@@ -31,8 +36,3 @@ using namespace std;
   }
 
   //NOde class shoiuld have
-  linked list of next nodes
-  value
-  right
-  left
-void Compact:Compact();
