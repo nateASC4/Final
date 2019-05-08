@@ -4,4 +4,29 @@
 #include "compact.h"
 using namespace std;
 
-void Compact::();
+int main(){
+
+
+}
+
+
+Compact::Compact(char value){
+
+}
+
+void Compact::add(char value){
+
+}
+
+void Compact::remove(int index){
+
+}
+
+void Compact::checkWord(std::string word){
+
+}
+
+void Compact::printArr(){
+
+
+}
