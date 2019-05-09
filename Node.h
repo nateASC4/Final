@@ -21,13 +21,13 @@ class Node{
         }
 
         //retrieve the cahracter held in the node
-        string getValue()
+        string getVal()
         {
             return value;
         }
 
         //change the value held by the node
-        void setValue(string val)
+        void setVal(string val)
         {
             value = val;
         }
