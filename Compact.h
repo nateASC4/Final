@@ -46,17 +46,12 @@ class LetterNode{
 class Compact{
  private:
   LetterNode* head;
-  //std::vector<char> arr; Didn't Grissom tell us not to do this?
   int size;
 
  public:
 
   Compact(char value) {
-    //head->setVal(value); line gives an error
-    //head->setNextRight(nullptr);
-    //head->setNextLeft(nullptr);
-    //size+; this line gives as error
-  //  arr.push_back(value); // not declared in this scope
+    
   }
   void add(char value);
   void remove(int index);
