@@ -6,8 +6,8 @@ int main(){
 }
 class Node{
     private:
-        bool isTerminal;
-        string value;
+        bool isTerminal; 
+        string value; // character held by Node object
         map <string, Node*> hashMap;
 
     public:
@@ -68,6 +68,16 @@ class Node{
 
         void makeTerminal()
         {
-            
+            isTerminal = true;
+        }
+
+        void makeNonTerminal()
+        {
+            isTerminal = false;
+        }
+
+        bool getterminality()
+        {
+            return isTerminal;
         }
 };
