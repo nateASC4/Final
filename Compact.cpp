@@ -5,30 +5,29 @@
 using namespace std;
 
 //We do not need a constructor
-  int Compact::size(){
-    return size;
-  }
+
 
   void Compact::clear(){
-    head = null;
+    head = *null;
   }
 
   void Compact::remove(){
-
+    //look for a terminal NOde
+    //check to see what it is tied to
   }
 
   void Compact::put(){
-    LetterNode newNode = new LetterNode();
+    LetterNode* newNode = new LetterNode();
   }
 
-  int Compact::get(){
-
+  int Compact::getSize(){
+    return size;
   }
 
-  boolean Compact::containsKey(){
+  bool Compact::containsKey(){
 
    }
-  boolean Compact:: isEmpty(){
+  bool Compact:: isEmpty(){
 
   }
 
