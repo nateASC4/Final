@@ -4,29 +4,32 @@
 #include "compact.h"
 using namespace std;
 
-int main(){
+//We do not need a constructor
+  int Compact::size(){
+    return size;
+  }
 
+  void Compact::clear(){
+    head = null;
+  }
 
-}
+  void Compact::remove(){
 
+  }
 
-Compact::Compact(char value){
+  void Compact::put(){
+    LetterNode newNode = new LetterNode();
+  }
 
-}
+  int Compact::get(){
 
-void Compact::add(char value){
+  }
 
-}
+  boolean Compact::containsKey(){
 
-void Compact::remove(int index){
+   }
+  boolean Compact:: isEmpty(){
 
-}
+  }
 
-void Compact::checkWord(std::string word){
-
-}
-
-void Compact::printArr(){
-
-
-}
+  //NOde class shoiuld have
