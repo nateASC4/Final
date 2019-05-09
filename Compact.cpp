@@ -9,7 +9,7 @@ using namespace std;
 
 
   void Compact::clear(){
-    
+
 
   }
 
@@ -19,7 +19,7 @@ using namespace std;
   }
 
   void Compact::put(){
-    LetterNode* newNode = new LetterNode();
+  
   }
 
   int Compact::getSize(){

@@ -6,7 +6,7 @@ using namespace std; //std::cout;
 
 class Compact{
  private:
-  
+
   //std::vector<char> arr; Didn't Grissom tell us not to do this?
   int size;
 
