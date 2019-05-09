@@ -5,12 +5,10 @@
 using namespace std;
 
 //We do not need a constructor
-  int Compact::size(){
-    return size;
-  }
+
 
   void Compact::clear(){
-    head = null;
+    head = *null;
   }
 
   void Compact::remove(){
@@ -19,11 +17,11 @@ using namespace std;
   }
 
   void Compact::put(){
-    LetterNode newNode = new LetterNode();
+    LetterNode* newNode = new LetterNode();
   }
 
-  int Compact::get(){
-
+  int Compact::getSize(){
+    return size;
   }
 
   bool Compact::containsKey(){
