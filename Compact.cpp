@@ -14,7 +14,8 @@ using namespace std;
   }
 
   void Compact::remove(){
-
+    //look for a terminal NOde
+    //check to see what it is tied to
   }
 
   void Compact::put(){
@@ -25,10 +26,10 @@ using namespace std;
 
   }
 
-  boolean Compact::containsKey(){
+  bool Compact::containsKey(){
 
    }
-  boolean Compact:: isEmpty(){
+  bool Compact:: isEmpty(){
 
   }
 
