@@ -14,7 +14,7 @@ class LetterNode{
   char charVal;
  public:
 
-  LetterNode(String value)//check this line
+  LetterNode(string value)//check this line
   //  this std::string value within the parameters gives an error
   //  /*std::string value*/
    {
@@ -32,9 +32,9 @@ class LetterNode{
     this->val = value;
   }
 
-  void addNode(string nodeName, string value){
-    LetterNode* nodeName = new LetterNode();
-    //hashMap.insert(nodeName); //hashMap was not declared in this scope
+  void addNode(string value){
+    LetterNode* newestNode = new LetterNode(value);
+    hashMap->insert((newestNode); //hashMap was not declared in this scope
     isTerminal= false;
   }
   void checkNode(std::string value){
@@ -51,7 +51,7 @@ class Compact{
  public:
 
   Compact(char value) {
-    
+
   }
   void add(char value);
   void remove(int index);
