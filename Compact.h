@@ -4,6 +4,7 @@
 #include <iostream>
 using namespace std; //std::cout;
 
+<<<<<<< HEAD
 class LetterNode{
  private:
 
@@ -46,6 +47,12 @@ class LetterNode{
 class Compact{
  private:
   LetterNode* head;
+=======
+class Compact{
+ private:
+
+  //std::vector<char> arr; Didn't Grissom tell us not to do this?
+>>>>>>> 1bec1ef82ae8389e546ad6ff1306b9b7a0840899
   int size;
 
  public:

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "node.h"
 #include "compact.h"
 using namespace std;
 
@@ -8,7 +9,8 @@ using namespace std;
 
 
   void Compact::clear(){
-    head = *null;
+
+
   }
 
   void Compact::remove(){
@@ -17,7 +19,7 @@ using namespace std;
   }
 
   void Compact::put(){
-    LetterNode* newNode = new LetterNode();
+  
   }
 
   int Compact::getSize(){
