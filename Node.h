@@ -7,15 +7,15 @@ using namespace std;
 
 class Node{
     private:
-        bool isTerminal; 
+        bool isTerminal;
         string value; // character held by Node object
         Node* parent = nullptr; // the node that this node comes from
         map <string, Node*> hashMap; // holds a list of all possible next nodes
 
     public:
-        
+
         //constructor
-        Node(string val) 
+        Node(string val)
         {
             value = val;
         }
