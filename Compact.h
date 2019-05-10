@@ -14,11 +14,10 @@ class Compact{
   Compact(string value) {
     size = 0;
   }
-  void add(string value);
+
+
   void remove(int index);
   bool checkWord(string word);
-  void printArr();
-  int getSize();
   int trackSize();
   void clear();
   void remove();
