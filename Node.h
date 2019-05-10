@@ -36,7 +36,7 @@ class Node{
         void addNode(string val)
         {
             Node* node = new Node(val);
-            hashMap.insert( pair<string, Node*> (value, node));
+            hashMap.insert( pair<string, Node*> (val, node));
             isTerminal = false;
         }
 
@@ -74,7 +74,7 @@ class Node{
         //retrieves the value held by a specific node in the map
         string getNodeValue(string val)
         {
-            return hashMap[val]->getValue();
+            return hashMap[val]->getVal();
         }
 
         //changes the current node to a terminal one
