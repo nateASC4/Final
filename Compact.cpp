@@ -22,28 +22,17 @@ using namespace std;
     LetterNode newNode = new LetterNode();
   }
 
-  int Compact::get(int index){  // return value of the given Node at particular index
+  int Compact::get(int index){ 
 
   }
 
-  boolean Compact::containsKey(std::string finder){
-    LetterNode letter = hashMap.find(finder);
-    if( letter != nullptr){
-       return false;
-    }
-    else{
-      return true;
-    }
+  boolean Compact::containsKey(){
+
   }
 
 
   boolean Compact:: isEmpty(){
-    if(head == nullptr){
-      return true;
-    }
-    else{
-      return false;
-    }
+
   }
 
   //Node class should have
@@ -66,7 +55,7 @@ using namespace std;
     temp = hashMap.find(key);
     bool checked = temp.Terminality();
     if(checked == true){
-      
+
     }
     //look for a terminal NOde
     //check to see what it is tied to
