@@ -21,15 +21,28 @@ using namespace std;
     LetterNode newNode = new LetterNode();
   }
 
-  int Compact::get(){
+  int Compact::get(int index){  // return value of the given Node at particular index
 
   }
 
-  boolean Compact::containsKey(){
+  boolean Compact::containsKey(std::string finder){
+    LetterNode letter = hashMap.find(finder);
+    if( letter != nullptr){
+       return false;
+    }
+    else{
+      return true;
+    }
+  }
 
-   }
+
   boolean Compact:: isEmpty(){
-
+    if(head == nullptr){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
-  //NOde class shoiuld have
+  //Node class should have
