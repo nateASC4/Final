@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "node.h"
 #include "compact.h"
 using namespace std;
 
@@ -9,17 +8,23 @@ using namespace std;
 
 
   void Compact::clear(){
-
-
+    head = *null;
   }
 
-  void Compact::remove(){
+  void Compact::remove(string key){
+    Node* temp = new Node(" ");
+    temp = hashMap.find(key);
+    bool checked = temp.Terminality();
+    if(checked == true){
+      
+    }
     //look for a terminal NOde
     //check to see what it is tied to
   }
 
-  void Compact::put(){
-  
+  void Compact::put(String value){
+    LetterNode* newNode = new LetterNode(value);
+    hashMap.insert(newNode);
   }
 
   int Compact::getSize(){
