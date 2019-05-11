@@ -1,4 +1,4 @@
-#ifndef NODE
+ #ifndef NODE
 #define NODE
 
 #include <map>
