@@ -19,22 +19,75 @@ CPPMap()
 {
 }
 
-int syze() // size
+int syze() // this is supposed to be size but the map class already has a method with that name
 {
     return size;
 }
 
-/*
+
 string entrySet()
 {
+    int num = 0;
     string entries = "[";
     for (auto it = hashMap.cbegin(); it != hashMap.cend(); ++it)
     {
         entries = entries + (*it).second->getVal();
+        if(num < size - 1)
+        {
+            entries = entries + ", ";
+            num++;
+        }
+    }
+    entries = entries + "]";
+    return entries;
+}
 
+string keySet()
+{
+    int num = 0;
+    string keys = "[";
+    for (auto it = hashMap.cbegin(); it != hashMap.cend(); ++it)
+    {
+        keys = keys + to_string((*it).first);
+        if(num < size - 1)
+        {
+            keys = keys + ", ";
+            num++;
+        }
+    }
+    keys = keys + "]";
+    return keys;
+}
+
+void wipe() //would be clear but map has a function called clear
+{
+    hashMap.clear();
+    size = 0;
+}
+
+string values()
+{
+
+}
+
+void putAll()
+{
+
+}
+
+void remove(string val)
+{
+    for (std::map<int , Node*>::iterator it=hashMap.begin(); it!=hashMap.end(); ++it)
+    {
+        if (it->second->getVal() == val)
+        hashMap.erase(it);
     }
 }
-*/
+
+void put()
+{
+
+}
 
 Node* get(int key) {
 	return hashMap[key];
@@ -52,12 +105,11 @@ return temp;
 }
 
 bool containsKey(int val) {
-    //use count
 	Node* node = hashMap[val];
     if(node = nullptr)
-    return false;
+        return false;
     else 
-    return true;
+        return true;
 }
 
 bool isEmpty() {
