@@ -87,6 +87,7 @@ void putAll(map<int, Node*>otherMap)
 for (std::map<int, Node*>::iterator it=otherMap.begin(); it!=otherMap.end(); ++it)
 {
 hashMap.insert(pair<int, Node*> ((*it).first, (*it).second));
+size++;
 }
 }
 
@@ -103,6 +104,7 @@ void put(int key, string val)
 {
     Node* node = new Node(val);
     hashMap.insert( pair<int, Node*> (key, node));
+    size++;
 }
 
 Node* get(int key) {
