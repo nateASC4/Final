@@ -67,12 +67,27 @@ void wipe() //would be clear but map has a function called clear
 
 string values()
 {
-
+    int num = 0;
+    string list = "[";
+for (std::map<int, Node*>::iterator it=hashMap.begin(); it!=hashMap.end(); ++it)
+{
+    list = list + "(" + to_string((*it).first) + ", " + (*it).second->getVal() + ")";
+    if(num < size - 1)
+    {
+        list = list + ", ";
+        num++;
+    }
+}
+list = list + "]";
+return list;
 }
 
-void putAll()
+void putAll(map<int, Node*>otherMap)
 {
-
+for (std::map<int, Node*>::iterator it=otherMap.begin(); it!=otherMap.end(); ++it)
+{
+hashMap.insert(pair<int, Node*> ((*it).first, (*it).second));
+}
 }
 
 void remove(string val)
@@ -84,9 +99,10 @@ void remove(string val)
     }
 }
 
-void put()
+void put(int key, string val)
 {
-
+    Node* node = new Node(val);
+    hashMap.insert( pair<int, Node*> (key, node));
 }
 
 Node* get(int key) {
