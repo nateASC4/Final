@@ -6,44 +6,6 @@
 using namespace std;
 
 //We do not need a constructor
-  int Compact::size(){
-    return size;
-  }
-
-  void Compact::clear(){
-    head = null;
-  }
-
-  void Compact::remove(){
-
-  }
-
-  void Compact::put(){
-    LetterNode newNode = new LetterNode();
-  }
-
-  int Compact::get(int index){ 
-
-  }
-
-  boolean Compact::containsKey(){
-
-  }
-
-
-  boolean Compact:: isEmpty(){
-
-  }
-
-  //Node class should have
-=======
-#include <iostream>
-#include <fstream>
-#include <string>
-#include "compact.h"
-using namespace std;
-
-//We do not need a constructor
 
 
   void Compact::clear(){
@@ -71,6 +33,7 @@ using namespace std;
     hashMap.insert(newNode);
     hashMap.put("  ", newNode);
   }
+
   int Compact::get(){
     Node* temp = new Node(" ");
     for (int i = 0; i < map.size(); i++){
@@ -87,17 +50,17 @@ using namespace std;
 
   bool Compact::containsKey(){
     Node temp;
-    if (temp != hashMap.end())[
-    
-    ]
+    if (temp != hashMap.end()){
+
+    }
    }
 
   bool Compact:: isEmpty(){
     Node* temp = new Node(" ");
-    if (temp* == nullptr){
-      return true;
-    }
-    else {return false;}
+    if (temp* == nullptr)
+      {return true;}
+    else
+      {return false;}
     return false;
     delete temp;
   }
@@ -105,7 +68,7 @@ using namespace std;
   int main(){
     Node* tester = new Node(" ");
 
-  return 0;
+    return 0;
   }
 
 <<<<<<< HEAD

@@ -1,4 +1,4 @@
- #ifndef NODE
+#ifndef NODE
 #define NODE
 
 #include <map>
@@ -105,6 +105,17 @@ class Node{
         {
             return parent;
         }
-};
+      };
+
+    class Tri
+    {
+      private:
+        Node* head;
+
+      public:
+        Tri();
+        ~Tri();
+    }
+  };
 
 #endif /* NODE */
