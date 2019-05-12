@@ -3,45 +3,9 @@
 #include <fstream>
 #include <string>
 #include "compact.h"
+#include "CPPMap.h"
 using namespace std;
 
-//We do not need a constructor
-  int Compact::size(){
-    return size;
-  }
-
-  void Compact::clear(){
-    head = null;
-  }
-
-  void Compact::remove(){
-
-  }
-
-  void Compact::put(){
-    LetterNode newNode = new LetterNode();
-  }
-
-  int Compact::get(int index){ 
-
-  }
-
-  boolean Compact::containsKey(){
-
-  }
-
-
-  boolean Compact:: isEmpty(){
-
-  }
-
-  //Node class should have
-=======
-#include <iostream>
-#include <fstream>
-#include <string>
-#include "compact.h"
-using namespace std;
 
 //We do not need a constructor
 
@@ -88,7 +52,7 @@ using namespace std;
   bool Compact::containsKey(){
     Node temp;
     if (temp != hashMap.end())[
-    
+
     ]
    }
 
@@ -104,6 +68,13 @@ using namespace std;
 
   int main(){
     Node* tester = new Node(" ");
+    tester-> setVal("c");
+    tester->addNode("o");
+    tester->addNode("m");
+    tester->addNode("p");
+    tester->addNode("u");
+    tester->addNode("t");
+    tester->addNode("e");
 
   return 0;
   }
