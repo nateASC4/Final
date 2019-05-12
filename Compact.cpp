@@ -56,6 +56,15 @@ using namespace std;
    }
 
   bool Compact:: isEmpty(){
+    //first attempt
+    for (int i = 0; i < size; i++){
+      if (size->tri[i]){
+        return false;
+      }
+      return true;
+    }
+
+    //2nd Attempt
     Node* temp = new Node(" ");
     if (temp* == nullptr)
       {return true;}

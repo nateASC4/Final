@@ -130,8 +130,8 @@ class Node{
     class Tri
     {
       private:
-        Node* head;
-
+        Tri* head;
+        Node isTerminal;
       public:
         Tri();
         ~Tri();
@@ -250,7 +250,7 @@ bool CPPMap::containsKey(int val) {
 	Node* node = hashMap[val];
     if(node = nullptr)
         return false;
-    else 
+    else
         return true;
 }
 
