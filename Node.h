@@ -2,19 +2,18 @@
 #define NODE
 
 #include <iostream>
-//#include "CPPMap.h"
 #include <map>
 using namespace std;
 
-class Node;
+class Node; //declare node so that declaratoin of CPPMap can use node objects
 
-class CPPMap
+class CPPMap// declare CPPMap and its methods so that when methods in Node are defined they can use these
 {
     private:
-        map<int, Node*> hashMap;
-        int size;
+        map<int, Node*> hashMap;//map object that is manipulated in each node by using CPPMap
+        int size;//tells how many items are in the map
     public:
-    int syze();
+    int syze(); 
     string entrySet();
     string keySet();
     void wipe();
@@ -33,8 +32,8 @@ class Node{
         bool isTerminal;
         string value; // character held by Node object
         Node* parent = nullptr; // the node that this node comes from
-        CPPMap* NodeMap; // holds a list of all possible next nodes
-        int number = 0;
+        CPPMap* NodeMap; // holds a list of all possible next nodes aka branches
+        int number = 0; //used to create keys for each value that is put in the nodes map
     public:
 
         //constructor
@@ -74,7 +73,8 @@ class Node{
             return NodeMap->containsValue(val);
         }
 
-        //returns a specific node from the map
+        //returns a specific node from the map of possible next nodes
+	//useful for moving to the next branch in a tree
         Node* getNode(string val) //same as get()
         {
             for(int i = 0; i < NodeMap->syze(); i++)
@@ -82,10 +82,10 @@ class Node{
                 if(val == NodeMap->get(i)->getVal())
                     return NodeMap->get(i);
             }
-            return nullptr;
+            return nullptr; //this may cause issues
         }
 
-        //erases a node from the map
+        //erases a node from the map of possible next nodes
         void removeNode(string val)
         {
             NodeMap->remove(val);
@@ -98,12 +98,14 @@ class Node{
         }
 
         //changes the current node to a terminal one
+	//tells if you are at the end of a word
         void makeTerminal()
         {
             isTerminal = true;
         }
 
         //changes the current node to a nonterminal one
+	//tells if you are not at the end of a word
         void makeNonTerminal()
         {
             isTerminal = false;
@@ -114,13 +116,15 @@ class Node{
         {
             return isTerminal;
         }
-
+	//used to link the current node to the previous one in the tree
+	//useful for allowing movement back up the tree
         void setParent(Node* par)
         {
             parent = par;
         }
 
         //gives the parent of the current node
+	//useful for moving back up the tree
         Node* getParent()
         {
             return parent;
@@ -148,12 +152,13 @@ int CPPMap::syze() // this is supposed to be size but the map class already has 
     return size;
 }
 
-
+//gives a list of all of the values held in the map
+// an example of this would be a string that looked like: "[a,b,c]"
 string CPPMap::entrySet()
 {
     int num = 0;
-    string entries = "[";
-    for (auto it = hashMap.cbegin(); it != hashMap.cend(); ++it)
+    string entries = "[";//the string that is returned
+    for (auto it = hashMap.cbegin(); it != hashMap.cend(); ++it)//itterate through the map
     {
         entries = entries + (*it).second->getVal();
         if(num < size - 1)
@@ -166,6 +171,8 @@ string CPPMap::entrySet()
     return entries;
 }
 
+//gives a list of all of the keys held in the map
+//an example of what it looks like is: "[1,2,3]"
 string CPPMap::keySet()
 {
     int num = 0;
@@ -183,12 +190,15 @@ string CPPMap::keySet()
     return keys;
 }
 
+//gets rid of all keys and values in the map
 void CPPMap::wipe() //would be clear but map has a function called clear
 {
     hashMap.clear();
     size = 0;
 }
 
+//gives a list of all keys and values in the map
+//an example of this would be: "[(1,a), (2,b), (3,c)]"
 string CPPMap::values()
 {
     int num = 0;
@@ -206,6 +216,7 @@ list = list + "]";
 return list;
 }
 
+\\takes a map object as input then coppies all of the keys and values into hashMap which is this objects map
 void CPPMap::putAll(map<int, Node*>otherMap)
 {
 for (std::map<int, Node*>::iterator it=otherMap.begin(); it!=otherMap.end(); ++it)
@@ -215,16 +226,21 @@ size++;
 }
 }
 
+//looks through th map for a node that contains the same string as val
+//when it finds such a node it deletes it
 void CPPMap::remove(string val)
 {
     for (std::map<int , Node*>::iterator it=hashMap.begin(); it!=hashMap.end(); ++it)
     {
-        if (it->second->getVal() == val)
+        if (it->second->getVal() == val){
         hashMap.erase(it);
+	    size--;
+	}
     }
-	size--;
+	
 }
 
+//adds in a new key and value to the map
 void CPPMap::put(int key, string val)
 {
     Node* node = new Node(val);
@@ -232,10 +248,13 @@ void CPPMap::put(int key, string val)
     size++;
 }
 
+//retrieves a value from the map
+//in this case a node object pointer is returned
 Node* CPPMap::get(int key) {
 	return hashMap[key];
 }
 
+//checks the map if there is a node that holde a string that is the same as val
 bool CPPMap::containsValue(string val) {
     bool temp = false;
 
@@ -247,6 +266,7 @@ for (std::map<int , Node*>::iterator it=hashMap.begin(); it!=hashMap.end(); ++it
 return temp;
 }
 
+//checks to see if the map has a key in it that is the same as val
 bool CPPMap::containsKey(int val) {
 	Node* node = hashMap[val];
     if(node = nullptr)
@@ -255,6 +275,7 @@ bool CPPMap::containsKey(int val) {
         return true;
 }
 
+//checks if the map size is equal to zero
 bool CPPMap::isEmpty() {
 	if (size == 0)
     return true;
