@@ -222,6 +222,7 @@ void CPPMap::remove(string val)
         if (it->second->getVal() == val)
         hashMap.erase(it);
     }
+	size--;
 }
 
 void CPPMap::put(int key, string val)
