@@ -5,7 +5,10 @@
 #include "compact.h"
 #include "CPPMap.h"
 using namespace std;
+<<<<<<< HEAD
 
+=======
+>>>>>>> d034827f4ebaeb9b48087532b23d3c9c56dc68ec
 
 //We do not need a constructor
 
@@ -35,6 +38,7 @@ using namespace std;
     hashMap.insert(newNode);
     hashMap.put("  ", newNode);
   }
+
   int Compact::get(){
     Node* temp = new Node(" ");
     for (int i = 0; i < map.size(); i++){
@@ -51,17 +55,32 @@ using namespace std;
 
   bool Compact::containsKey(){
     Node temp;
+<<<<<<< HEAD
     if (temp != hashMap.end())[
 
     ]
+=======
+    if (temp != hashMap.end()){
+
+    }
+>>>>>>> d034827f4ebaeb9b48087532b23d3c9c56dc68ec
    }
 
   bool Compact:: isEmpty(){
-    Node* temp = new Node(" ");
-    if (temp* == nullptr){
+    //first attempt
+    for (int i = 0; i < size; i++){
+      if (size->tri[i]){
+        return false;
+      }
       return true;
     }
-    else {return false;}
+
+    //2nd Attempt
+    Node* temp = new Node(" ");
+    if (temp* == nullptr)
+      {return true;}
+    else
+      {return false;}
     return false;
     delete temp;
   }
@@ -76,7 +95,7 @@ using namespace std;
     tester->addNode("t");
     tester->addNode("e");
 
-  return 0;
+    return 0;
   }
 
 <<<<<<< HEAD
