@@ -35,8 +35,20 @@ using namespace std;
     cout<< outBoolTwo;
     cout<< "\n";
     test->addNode("s");
+    cout<< "checking for the letter s, post add \n" ;
+    cout<< "the letter s is there: ";
+    bool checkForItQuatro = test->checkFor("s");
+    string outBoolfour;
+    if(checkForItQuatro == 1){
+      outBoolfour = "true";
+    }
+    else{
+      outBoolfour = "false";
+    }
+    cout<< outBoolfour;
+    cout<< "\n";
     test->removeNode("s");
-    cout<< "checking for the letter s \n" ;
+    cout<< "checking for the letter s, post remove\n" ;
     cout<< "the letter s is there: ";
     bool checkForItThrice = test->checkFor("s");
     string outBoolThree;
@@ -59,18 +71,8 @@ using namespace std;
     cout<< "value is: ";
     cout<< getIt->getVal();
     cout<<"\n";
-    test->getNode("e")->setParent(test->getNode("t"));
-    test->getNode("t")->setParent(test->getNode("u"));
-    test->getNode("u")->setParent(test->getNode("p"));
-    test->getNode("p")->setParent(test->getNode("m"));
-    test->getNode("m")->setParent(test->getNode("o"));
-    test->getNode("o")->setParent(test->getNode("c"));
-    string getItOut= test->getNode("e")->getParent()->getVal();
-    cout<<"checking for the parent node of e, should be t \n";
-    cout<<"the parent node of e is: ";
-    cout<< getItOut;
-    test->makeTerminal();
-    bool termTest= test->Terminality();
+    test->getNode("e")->makeTerminal();
+    bool termTest= test->getNode("e")->Terminality();
     string sendout;
     if(termTest==1){
       sendout = "true";
@@ -81,6 +83,18 @@ using namespace std;
     cout<<"the terminality of the last node is: ";
     cout<< sendout;
     cout<< "\n";
+    test->getNode("o")->setParent(test);
+    string getItOut= test->getNode("o")->getParent()->getVal();
+    cout<<"checking for the parent node of o, should be c \n";
+    cout<<"the parent node of o is: ";
+    cout<< getItOut;
+    cout<<"\n";
+    test->getNode("m")->setParent(test->getNode("o"));
+    string getItOutm= test->getNode("m")->getParent()->getVal();
+    cout<<"checking for the parent node of m, should be o \n";
+    cout<<"the parent node of m is: ";
+    cout<< getItOutm;
+    cout<<"\n";
     return 0;
     delete test;
     }
