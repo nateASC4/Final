@@ -34,6 +34,26 @@ using namespace std;
     }
     cout<< outBoolTwo;
     cout<< "\n";
+    test->addNode("s");
+    test->removeNode("s");
+    cout<< "checking for the letter s \n" ;
+    cout<< "the letter s is there: ";
+    bool checkForItThrice = test->checkFor("s");
+    string outBoolThree;
+    if(checkForItThrice == 1){
+      outBoolThree = "true";
+    }
+    else{
+      outBoolThree = "false";
+    }
+    cout<< outBoolThree;
+    cout<< "\n";
+    string obtain= test->getNodeValue(2);
+    cout<<"checking for value of node 2, should be m \n";
+    cout<< "here is the value of node 2: ";
+    cout<< obtain;
+    cout<< "\n";
+
     Node* getIt;
     getIt = test->getNode("t");
     cout<<"value should be t \n";
