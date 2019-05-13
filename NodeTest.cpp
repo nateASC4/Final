@@ -2,17 +2,19 @@
 #include <iostream>
 using namespace std;
   int main(){
-    CPPMap* map = new CPPMap();
-    cout<<"the initial size of the Map is: ";
-    cout<< map->syze();
-    string intial = "compute";
-    for(int b = 1; b==intial.size(); b++){
-      string addMe = intial.substr(b-1, b);
-      map->put(b, addMe);
-    }
-    cout<<"the entry values are: ";
-    cout<<map->entrySet();
-    cout<<"the key values are: ";
-    cout<<map->keySet();
+    Node* test = new Node(" ");
+    test->setVal("c");
+    test->addNode("o");
+    test->addNode("m");
+    test->addNode("p");
+    test->addNode("u");
+    test->addNode("t");
+    test->addNode("e");
+    cout<< "checking for the letter u \n" ;
+    cout<< "the letter u is there: ";
+    bool checkForIt = test->checkFor("u");
+    cout<< checkForIt;
+    cout<< "\n";
+
     return 0;
     }
