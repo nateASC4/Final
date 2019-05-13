@@ -78,7 +78,7 @@ class Node{
         Node* getNode(string val) //same as get()
         {
           Node* sendIt = new Node(" ");
-          
+
           for(int i = 0; i < NodeMap->syze(); i++)
           {
               if(val == NodeMap->get(i)->getVal())
@@ -253,7 +253,7 @@ void CPPMap::put(int key, string val)
 //retrieves a value from the map
 //in this case a node object pointer is returned
 Node* CPPMap::get(int key) {
-	Node* node = new node(" 0 ");
+	Node* node = new Node(" 0 ");
 	if(containsKey(key))
 	return hashMap[key];
 	else

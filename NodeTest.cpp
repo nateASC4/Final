@@ -53,17 +53,33 @@ using namespace std;
     cout<< "here is the value of node 2: ";
     cout<< obtain;
     cout<< "\n";
+    Node* getIt;
+    getIt = test->getNode("t");
+    cout<<"value should be t \n";
+    cout<< "value is: ";
+    cout<< getIt->getVal();
+    cout<<"\n";
     test->getNode("e")->setParent(test->getNode("t"));
     test->getNode("t")->setParent(test->getNode("u"));
     test->getNode("u")->setParent(test->getNode("p"));
     test->getNode("p")->setParent(test->getNode("m"));
     test->getNode("m")->setParent(test->getNode("o"));
     test->getNode("o")->setParent(test->getNode("c"));
-    
-    Node* getIt;
-    getIt = test->getNode("t");
-    cout<<"value should be t \n";
-    cout<< "value is: ";
-    cout<< getIt->getVal();
+    string getItOut= test->getNode("e")->getParent()->getVal();
+    cout<<"checking for the parent node of e, should be t \n";
+    cout<<"the parent node of e is: ";
+    cout<< getItOut;
+    test->getNode("e")->makeTerminal();
+    bool termTest= test->getNode("e")->Terminality();
+    string sendout;
+    if(termTest==1){
+      sendout = "true";
+    }
+    else{
+      sendout="false";
+    }
+    cout<<"the terminality of the last node is: ";
+    cout<< sendout;
+    cout<< "\n";
     return 0;
     }
