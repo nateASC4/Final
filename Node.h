@@ -271,7 +271,7 @@ return temp;
 bool CPPMap::containsKey(int val) {
 	Node* node = hashMap[val];
   bool temp;
-    if(node = nullptr){
+    if(node == nullptr){
       temp = false;
     }
     else{
