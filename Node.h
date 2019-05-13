@@ -253,7 +253,10 @@ void CPPMap::put(int key, string val)
 //retrieves a value from the map
 //in this case a node object pointer is returned
 Node* CPPMap::get(int key) {
+	if(containsKey(key))
 	return hashMap[key];
+	else
+		return nullptr;
 }
 
 //checks the map if there is a node that holde a string that is the same as val
