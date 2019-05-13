@@ -29,7 +29,7 @@ class CPPMap// declare CPPMap and its methods so that when methods in Node are d
 
 class Node{
     private:
-        bool isTerminal;
+        bool isTerminal=true;
         string value; // character held by Node object
         Node* parent = nullptr; // the node that this node comes from
         CPPMap* NodeMap; // holds a list of all possible next nodes aka branches
@@ -66,7 +66,7 @@ class Node{
         {
             number++;
             NodeMap->put(number, val);
-          
+
         }
 
         //checks the map if there is a node holding a certain letter
