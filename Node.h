@@ -270,18 +270,26 @@ return temp;
 //checks to see if the map has a key in it that is the same as val
 bool CPPMap::containsKey(int val) {
 	Node* node = hashMap[val];
-    if(node = nullptr)
-        return false;
-    else
-        return true;
+  bool temp;
+    if(node = nullptr){
+      temp = false;
+    }
+    else{
+      temp= true;
+    }
+    return temp;
 }
 
 //checks if the map size is equal to zero
 bool CPPMap::isEmpty() {
-	if (size == 0)
-    return true;
-    else
-    return false;
+  bool temp;
+  if (size == 0){
+    temp= true;
+  }
+  else{
+    temp=false;
+  }
+    return temp;
 }
 
 #endif /* NODE */
