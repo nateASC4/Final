@@ -1,7 +1,7 @@
 #include "Node.h"
 #include <iostream>
 using namespace std;
-class Node{
+class NodeTest{
   int main(){
   CPPMap map = new CPPMap();
   cout<<"the initial size of the Map is: ";
