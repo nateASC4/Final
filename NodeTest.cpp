@@ -69,7 +69,7 @@ using namespace std;
     cout<<"checking for the parent node of e, should be t \n";
     cout<<"the parent node of e is: ";
     cout<< getItOut;
-    test->getNode("e")->makeTerminal();
+    test->makeTerminal();
     bool termTest= test->Terminality();
     string sendout;
     if(termTest==1){
@@ -82,4 +82,5 @@ using namespace std;
     cout<< sendout;
     cout<< "\n";
     return 0;
+    delete test;
     }
