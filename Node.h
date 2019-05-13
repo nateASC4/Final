@@ -139,8 +139,8 @@ class Node{
       public:
         Tri();
         ~Tri();
-    }
-  };
+    };
+  
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -188,7 +188,7 @@ string CPPMap::keySet()
     }
     keys = keys + "]";
     return keys;
-}
+};
 
 //gets rid of all keys and values in the map
 void CPPMap::wipe() //would be clear but map has a function called clear
