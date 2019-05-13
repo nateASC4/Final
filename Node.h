@@ -41,6 +41,7 @@ class Node{
         {
             value = val;
             NodeMap = new CPPMap();
+
         }
 
         ~Node()
@@ -65,6 +66,7 @@ class Node{
         {
             number++;
             NodeMap->put(number, val);
+          
         }
 
         //checks the map if there is a node holding a certain letter

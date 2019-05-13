@@ -70,7 +70,7 @@ using namespace std;
     cout<<"the parent node of e is: ";
     cout<< getItOut;
     test->getNode("e")->makeTerminal();
-    bool termTest= test->getNode("e")->Terminality();
+    bool termTest= test->Terminality();
     string sendout;
     if(termTest==1){
       sendout = "true";
