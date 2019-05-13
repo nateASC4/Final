@@ -22,6 +22,18 @@ using namespace std;
     }
     cout<< outBool;
     cout<< "\n";
+    cout<< "checking for the letter n \n" ;
+    cout<< "the letter n is there: ";
+    bool checkForItAgain = test->checkFor("n");
+    string outBoolTwo;
+    if(checkForItAgain == 1){
+      outBoolTwo = "true";
+    }
+    else{
+      outBoolTwo = "false";
+    }
+    cout<< outBoolTwo;
+    cout<< "\n";
     Node* getIt;
     getIt = test->getNode("t");
     cout<<"value should be t \n";
