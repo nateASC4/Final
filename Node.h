@@ -78,6 +78,7 @@ class Node{
         Node* getNode(string val) //same as get()
         {
           Node* sendIt = new Node(" ");
+          
           for(int i = 0; i < NodeMap->syze(); i++)
           {
               if(val == NodeMap->get(i)->getVal())
