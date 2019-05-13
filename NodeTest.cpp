@@ -53,7 +53,13 @@ using namespace std;
     cout<< "here is the value of node 2: ";
     cout<< obtain;
     cout<< "\n";
-
+    test->getNode("e")->setParent(test->getNode("t"));
+    test->getNode("t")->setParent(test->getNode("u"));
+    test->getNode("u")->setParent(test->getNode("p"));
+    test->getNode("p")->setParent(test->getNode("m"));
+    test->getNode("m")->setParent(test->getNode("o"));
+    test->getNode("o")->setParent(test->getNode("c"));
+    
     Node* getIt;
     getIt = test->getNode("t");
     cout<<"value should be t \n";
