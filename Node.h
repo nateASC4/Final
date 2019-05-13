@@ -13,7 +13,7 @@ class CPPMap// declare CPPMap and its methods so that when methods in Node are d
         map<int, Node*> hashMap;//map object that is manipulated in each node by using CPPMap
         int size;//tells how many items are in the map
     public:
-    int syze(); 
+    int syze();
     string entrySet();
     string keySet();
     void wipe();
@@ -216,7 +216,7 @@ list = list + "]";
 return list;
 }
 
-\\takes a map object as input then coppies all of the keys and values into hashMap which is this objects map
+//takes a map object as input then coppies all of the keys and values into hashMap which is this objects map
 void CPPMap::putAll(map<int, Node*>otherMap)
 {
 for (std::map<int, Node*>::iterator it=otherMap.begin(); it!=otherMap.end(); ++it)
@@ -237,7 +237,7 @@ void CPPMap::remove(string val)
 	    size--;
 	}
     }
-	
+
 }
 
 //adds in a new key and value to the map
