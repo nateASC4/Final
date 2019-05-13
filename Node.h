@@ -77,12 +77,13 @@ class Node{
 	//useful for moving to the next branch in a tree
         Node* getNode(string val) //same as get()
         {
-            for(int i = 0; i < NodeMap->syze(); i++)
-            {
-                if(val == NodeMap->get(i)->getVal())
-                    return NodeMap->get(i);
-            }
-            return nullptr; //this may cause issues
+          Node* sendIt = new Node(" ");
+          for(int i = 0; i < NodeMap->syze(); i++)
+          {
+              if(val == NodeMap->get(i)->getVal())
+                  sendIt = NodeMap->get(i);
+          }
+          return sendIt; //this may cause issues
         }
 
         //erases a node from the map of possible next nodes
@@ -140,7 +141,7 @@ class Node{
         Tri();
         ~Tri();
     };
-  
+
 
 
 /////////////////////////////////////////////////////////////////////////
