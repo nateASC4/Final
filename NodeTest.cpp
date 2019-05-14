@@ -1,19 +1,25 @@
+/**
+* Main test code for the functions contained in Node.h
+* @authors Nate Antwi Seraiah Kutai Jeff MacAbee Frederick Griffin CS 174
+* @version 1.0 May 2019
+* Note this version is not thread safe
+*/
 #include "Node.h"
 #include <iostream>
 using namespace std;
   int main(){
     Node* test = new Node(" ");
-    test->setVal("c");
+    test->setVal("c"); //this section tests the first few methods in depth.
     test->addNode("o");
     test->addNode("m");
     test->addNode("p");
     test->addNode("u");
     test->addNode("t");
     test->addNode("e");
-    cout<< "checking for the letter u \n" ;
+    cout<< "checking for the letter u \n" ; //u should be in the list
     cout<< "the letter u is there: ";
     bool checkForIt = test->checkFor("u");
-    string outBool;
+    string outBool; //the following converts a bool value to a string for T/F purposes
     if(checkForIt == 1){
       outBool = "true";
     }
@@ -22,7 +28,7 @@ using namespace std;
     }
     cout<< outBool;
     cout<< "\n";
-    cout<< "checking for the letter n \n" ;
+    cout<< "checking for the letter n \n" ; //continuing the checks
     cout<< "the letter n is there: ";
     bool checkForItAgain = test->checkFor("n");
     string outBoolTwo;
@@ -34,7 +40,7 @@ using namespace std;
     }
     cout<< outBoolTwo;
     cout<< "\n";
-    test->addNode("s");
+    test->addNode("s"); //The following tests the remove function, should return opposite bools pre/post remove
     cout<< "checking for the letter s, post add \n" ;
     cout<< "the letter s is there: ";
     bool checkForItQuatro = test->checkFor("s");
@@ -60,7 +66,7 @@ using namespace std;
     }
     cout<< outBoolThree;
     cout<< "\n";
-    string obtain= test->getNodeValue(2);
+    string obtain= test->getNodeValue(2); //Checks the getNodeValue function
     cout<<"checking for value of node 2, should be m \n";
     cout<< "here is the value of node 2: ";
     cout<< obtain;
@@ -71,7 +77,7 @@ using namespace std;
     cout<< "value is: ";
     cout<< getIt->getVal();
     cout<<"\n";
-    test->getNode("e")->makeTerminal();
+    test->getNode("e")->makeTerminal(); //terminality test, sets and then checks terminality
     bool termTest= test->getNode("e")->Terminality();
     string sendout;
     if(termTest==1){
@@ -80,10 +86,10 @@ using namespace std;
     else{
       sendout="false";
     }
-    cout<<"the terminality of the last node is: ";
+    cout<<"the terminality of the last node is: "; //should always be true
     cout<< sendout;
     cout<< "\n";
-    test->getNode("o")->setParent(test);
+    test->getNode("o")->setParent(test); //sets parent nodes for nodes
     string getItOut= test->getNode("o")->getParent()->getVal();
     cout<<"checking for the parent node of o, should be c \n";
     cout<<"the parent node of o is: ";
@@ -95,6 +101,6 @@ using namespace std;
     cout<<"the parent node of m is: ";
     cout<< getItOutm;
     cout<<"\n";
-    return 0;
-    delete test;
+    return 0; //final return for the main function
+    delete test; //reallocates memory upon termination of the program
     }
